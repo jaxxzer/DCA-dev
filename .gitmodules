@@ -1,0 +1,6 @@
+[submodule "mavlink"]
+	path = mavlink
+	url = https://github.com/jaxxzer/mavlink.git
+[submodule "MAVProxy"]
+	path = MAVProxy
+	url = https://github.com/jaxxzer/MAVProxy.git
