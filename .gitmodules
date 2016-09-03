@@ -4,3 +4,6 @@
 [submodule "MAVProxy"]
 	path = MAVProxy
 	url = https://github.com/jaxxzer/MAVProxy.git
+[submodule "companion"]
+	path = companion
+	url = https://github.com/jaxxzer/companion.git
