@@ -1,0 +1,69 @@
+sudo apt-get install git
+sudo apt-get install openjdk-7-jdk
+sudo apt-get install gawk
+  sudo apt-get install python-empy
+sudo apt-get install python-pip
+  sudo pip install catkin_pkg
+
+sudo apt-get install lib32gcc1
+sudo apt-get genromfs
+sudo apt-get remove modemmanager
+sudo usermod -a -G dialout $USER
+^^^needs reboot
+
+sudo apt-get install screen
+sudo apt-get install python-dev
+
+
+gcc-arm-none-eabi-4_9-2015q3 in /opt
+from: http://firmware.ardupilot.org/Tools/PX4-tools/
+
+add
+export PATH=$PATH:/opt/gcc-arm-none-eabi-4_9-2015q3/bin
+to end of $HOME/.bashrc
+
+eclipse mars
+
+qt 5.5.1
+sudo apt-get install espeak libespeak-dev libudev-dev libsdl1.2-dev
+
+For MAVExploerer:
+sudo apt-get install libfreetype6-dev
+sudo pip install matplotlib
+
+to build execuables for pi, bbb
+sudo apt-get install g++-arm-linux-gnueabihf
+
+
+
+Arduino 1.6.9
+stm32duino boards
+esp8266 boards
+
+
+
+git clone https://github.com/bluerobotics/qgroundcontrol.git
+git clone https://github.com/bluerobotics/ardusub.git
+git clone https://github.com/Dronecode/MAVProxy.git
+git clone https://github.com/mavlink/mavlink.git
+
+
+for mavexplorer:
+matplotlib
+sudo apt-get install python-wxtools
+
+for mavproxy map module:
+sudo apt-get install python-opencv
+
+for hypack-translation script:
+sudo pip install pyproj
+
+for mavgenerate:
+sudo apt-get install python-tk
+
+
+sudo apt-get install gparted
+
+sudo apt-get install exfat-fuse exfat-utils
+
+
