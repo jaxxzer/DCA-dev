@@ -14,7 +14,8 @@ parser.add_option("--out", dest="out_file", default="mission.wp", help="Output .
 parser.add_option("--depth", dest="depth", default=-0.25, help="depth of all waypoints")
 parser.add_option("--alt-frame", dest="alt-frame", default=0, help="alt frame, 0=relative, 3=above terrain")
 parser.add_option("--delay", dest="delay", default=1.0, help="time to wait at each waypoint before proceeding with mission")
-parser.add_option("-nf", dest="flip", action="store_false", default=True, help="disable automatically flipping every other waypoint for proper navigation behavior")
+parser.add_option("--noflip", dest="flip", action="store_false", default=True, help="disable automatically flipping every other waypoint for proper navigation behavior")
+parser.add_option("--reverse", dest="reverse", action="store_true", default=False, help="Reverse waypoint order")
 (options,args) = parser.parse_args()
 
 in_file = open(options.in_file, "r")
@@ -39,7 +40,10 @@ for line in lines:
         easting = float(line[first_space+1:second_space]) * 0.3048006096
         northing = float(line[second_space:]) * 0.3048006096
         lat, lng = pyproj.transform(fl_east_ft, wgs84, easting, northing)
-        wps.append((lat,lng))
+        if(options.reverse):
+            wps.insert(0, (lat,lng))
+        else:
+            wps.append((lat,lng))
 	'''
         if count == 0:
             out_file.write(str(count) + '\t0\t0\t16\t0.000000\t0.000000\t0.000000\t0.000000\t' + str(lng) + '\t' + str(lat) + '\t25.000000\t1\n')
@@ -59,10 +63,11 @@ if options.flip:
         wps[idx] = wps[idx+1]
         wps[idx+1] = temp
 
-
 count = 0
+out_file.write('0\t0\t0\t16\t'+str(options.delay)+'\t0.000000\t0.000000\t0.000000\t' + str(wps[0][1]) + '\t' + str(wps[0][0]) + '\t'+str(options.depth)+'\t1\n')
 for wp in wps:
-    out_file.write(str(count) + '\t0\t0\t16\t'+str(options.delay)+'\t0.000000\t0.000000\t0.000000\t' + str(wp[1]) + '\t' + str(wp[0]) + '\t'+str(options.depth)+'\t1\n')
+    print count
+    out_file.write(str(count+1) + '\t0\t0\t16\t'+str(options.delay)+'\t0.000000\t0.000000\t0.000000\t' + str(wp[1]) + '\t' + str(wp[0]) + '\t'+str(options.depth)+'\t1\n')
     count = count + 1  
 
 print
