@@ -12,8 +12,8 @@ FILENAME=$DATE.$BRANCH.$COMMIT.px4
 echo $FILENAME
 
 # copy the firmware to remote host
-scp ~/git/ArduSub/ArduSub/ArduSub-v2.px4 pi@10.0.0.20:~/$FILENAME
-ssh pi@10.0.0.20 \
+scp ~/git/ArduSub/ArduSub/ArduSub-v2.px4 pi@20.0.0.20:~/$FILENAME
+ssh pi@20.0.0.20 \
 
 # quit mavproxy on remote host
 # move old firmware
