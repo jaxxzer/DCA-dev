@@ -72,20 +72,39 @@ git clone --recursive https://github.com/bluerobotics/qgroundcontrol.git
 git clone --recursive https://github.com/bluerobotics/ardusub.git
 git clone https://github.com/jaxxzer/MAVProxy.git
 git clone https://github.com/jaxxzer/mavlink.git
-git clone https://github.com/jaxxzer/Mavlink-monitor.git
-git clone https://github.com/jaxxzer/Mavlink-sony.git
 git clone https://github.com/jaxxzer/companion.git
 git clone --recursive https://github.com/jaxxzer/DCA-dev.git
 
-cd ~
-mkdir Arduino
-cd Arduino
+cd ~/Downloads
 
-mkdir hardware
-cd hardware
+#Download/extract Arduino
+wget https://www.arduino.cc/download.php?f=/arduino-1.6.9-linux64.tar.xz -O ~/Downloads/arduino-1.6.9-linux64.tar.xz
+sudo tar -xvJf ~/Downloads/arduino-1.6.9-linux64.tar.xz --directory /opt
+/opt/arduino-1.6.9/install.sh
+
+#Download/extract arm compiler for pixhawk
+wget http://firmware.us.ardupilot.org/Tools/PX4-tools/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2 -O ~/Downloads/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
+sudo tar -xvjf ~/Downloads/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2 --directory /opt
+
+sed -i "\$aPATH=\$PATH:/opt/gcc-arm-none-eabi-4_9-2015q3/bin" $HOME/.bashrc
+
+
+mkdir ~/Arduino
+cd ~/Arduino
+git clone https://github.com/jaxxzer/Mavlink-monitor.git
+git clone https://github.com/jaxxzer/Mavlink-sony.git
+
+mkdir ~/Arduino/hardware
+cd ~/Arduino/hardware
 git clone https://github.com/rogerclarkmelbourne/Arduino_STM32.git
 
-mkdir esp8266com
-cd exp8266com
+mkdir ~/Arduino/hardware/esp8266com
+cd ~/Arduino/hardware/exp8266com
 git clone https://github.com/esp8266/Arduino.git
+
+wget download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -O ~/Downloads/qt-unified-linux-x64-online.run
+chmod +x ~/Downloads/qt-unified-linux-x64-online.run
+~/Downloads/qt-unified-linux-x64-online.run
+
+
 
