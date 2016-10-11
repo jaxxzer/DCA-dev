@@ -60,13 +60,14 @@ sudo apt-get upgrade -y
 
 
 
-cd ~
-mkdir git
-cd git
+mkdir ~/git
+cd ~/git
 
 # configure git to save password for 2 hours at at a time
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=7200'
+git config --global user.name "jaxxzer"
+git config --global user.email "jwalser90@gmail.com"
 
 git clone --recursive https://github.com/bluerobotics/qgroundcontrol.git
 git clone --recursive https://github.com/bluerobotics/ardusub.git
