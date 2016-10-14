@@ -14,7 +14,7 @@ parser.add_option("--noplot", dest="noplot", default=False, action="store_true",
 
 fig = plt.figure()
 
-infile = open("samples.txt", "r")
+infile = open(options.infile, "r")
 
 lines = infile.readlines()
 infile.close()
@@ -31,7 +31,7 @@ current_ordinate = options.start_ordinate
 
 current_index = sample_indices[0]
 
-outfile = open("output.csv", "w")
+outfile = open(options.outfile, "w")
 
 for i in range(1,len(sample_indices)):
    radius_0 = sample_radii[i-1]
