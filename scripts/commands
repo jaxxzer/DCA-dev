@@ -1,0 +1,4 @@
+
+// recordwebcam video device
+avconv -f video4linux2 -input_format mjpeg -i /dev/video1 out2.mpeg
+
