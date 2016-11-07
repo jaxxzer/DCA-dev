@@ -1,0 +1,5 @@
+alias mp='/home/jack/git/DCA-dev/scripts/mpgcs.sh'
+alias ifdu='sudo ifdown eth0 && sleep 3 && sudo ifup eth0'
+alias rec='/home/jack/git/DCA-dev/scripts/record_video.sh'
+alias srec='/home/jack/git/DCA-dev/scripts/stop_record.sh'
+alias sdp='ssh pi@20.0.0.20 "sudo shutdown -h now"'
