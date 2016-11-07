@@ -7,6 +7,7 @@ sudo apt-get install -y gawk
 sudo apt-get install -y python-empy
 sudo apt-get install -y python-pip
 sudo pip install catkin_pkg
+sudo pip install future
 
 sudo apt-get install -y lib32gcc1
 sudo apt-get install -y genromfs

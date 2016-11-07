@@ -2,3 +2,26 @@
 // recordwebcam video device
 avconv -f video4linux2 -input_format mjpeg -i /dev/video1 out2.mpeg
 
+// Stream to multiple clients from gstreamer, instead of udpsink, use:
+#multiudpsink clients=192.168.0.10:5600,192.168.0.30:5600,192.168.0.31:5600
+
+// Split a video with avconv, starting at 300 second mark, 140 seconds in length
+avconv -ss 300 -i GOPR9652.MP4 -t 140 -vcodec copy -acodec copy cut1.mp4
+
+// -v means invert output, -f means file for patterns to match
+cat ~/Documents/RPIdev2.params | grep -vf exclude2.txt > std.params
+
+// preserve environment variables
+sudo -E ...
+// export a variable when running sudo
+sudo VAR=val ...
+
+
+// filter telemetry log to pixhawk messages only
+mavlogdump.py -q -o logdump.tlog --format=standard --source-system=1 --source-component=1 ~/flight.tlog
+
+
+
+
+
+
