@@ -1,8 +1,10 @@
 #!/bin/bash
 sudo apt-get update
 sudo apt-get upgrade -y
+
+sudo apt-get install -y default-jre
+sudo apt-get install -y default-jdk
 sudo apt-get install -y git
-sudo apt-get install -y openjdk-7-jdk
 sudo apt-get install -y gawk
 sudo apt-get install -y python-empy
 sudo apt-get install -y python-pip
@@ -29,7 +31,7 @@ sudo apt-get install -y python-dev
 #eclipse mars
 
 #qt 5.5.1
-sudo apt-get install -y espeak libespeak-dev libudev-dev libsdl1.2-dev
+sudo apt-get install -y espeak libespeak-dev libudev-dev libsdl1.2-dev gstreamer1.0*
 
 #For MAVExploerer:
 sudo apt-get install -y libfreetype6-dev
@@ -104,9 +106,16 @@ mkdir ~/Arduino/hardware/esp8266com
 cd ~/Arduino/hardware/exp8266com
 git clone https://github.com/esp8266/Arduino.git
 
+bash ~/Arduino/hardware/Arduino_STM32/tools/linux64/install.sh
+
+wget http://ftp.osuosl.org/pub/eclipse/technology/epp/downloads/release/mars/2/eclipse-cpp-mars-2-linux-gtk-x86_64.tar.gz -O ~/Downloads/eclipse-cpp-mars-2-linux-gtk-x86_64.tar.gz
+sudo tar -xvzf ~/Downloads/eclipse-cpp-mars-2-linux-gtk-x86_64.tar.gz --directory /opt
+
 wget download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -O ~/Downloads/qt-unified-linux-x64-online.run
 chmod +x ~/Downloads/qt-unified-linux-x64-online.run
 ~/Downloads/qt-unified-linux-x64-online.run
+
+
 
 
 
