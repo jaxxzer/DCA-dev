@@ -74,10 +74,10 @@ git config --global user.email "jwalser90@gmail.com"
 
 git clone --recursive https://github.com/bluerobotics/qgroundcontrol.git
 git clone --recursive https://github.com/jaxxzer/ardusub.git
-git clone https://github.com/jaxxzer/MAVProxy.git
-git clone https://github.com/jaxxzer/mavlink.git
-git clone https://github.com/jaxxzer/companion.git
 git clone --recursive https://github.com/jaxxzer/DCA-dev.git
+
+sudo python ~/git/DCA-dev/mavlink/pymavlink/setup.py build install
+sudo python ~/git/DCA-dev/MAVProxy/setup.py build install
 
 cd ~/Downloads
 
