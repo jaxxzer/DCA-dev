@@ -73,7 +73,7 @@ git config --global user.name "jaxxzer"
 git config --global user.email "jwalser90@gmail.com"
 
 git clone --recursive https://github.com/bluerobotics/qgroundcontrol.git
-git clone --recursive https://github.com/bluerobotics/ardusub.git
+git clone --recursive https://github.com/jaxxzer/ardusub.git
 git clone https://github.com/jaxxzer/MAVProxy.git
 git clone https://github.com/jaxxzer/mavlink.git
 git clone https://github.com/jaxxzer/companion.git
@@ -111,10 +111,15 @@ bash ~/Arduino/hardware/Arduino_STM32/tools/linux64/install.sh
 wget http://ftp.osuosl.org/pub/eclipse/technology/epp/downloads/release/mars/2/eclipse-cpp-mars-2-linux-gtk-x86_64.tar.gz -O ~/Downloads/eclipse-cpp-mars-2-linux-gtk-x86_64.tar.gz
 sudo tar -xvzf ~/Downloads/eclipse-cpp-mars-2-linux-gtk-x86_64.tar.gz --directory /opt
 
-wget download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -O ~/Downloads/qt-unified-linux-x64-online.run
-chmod +x ~/Downloads/qt-unified-linux-x64-online.run
-~/Downloads/qt-unified-linux-x64-online.run
+rm ~/Downloads/*.tar.*
 
+ln -s ~/git/DCA-dev/scripts/gcs_aliases ~/.bash_aliases
+
+mv ~/git/ardusub ~/git/ArduSub
+
+#wget download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -O ~/Downloads/qt-unified-linux-x64-online.run
+#chmod +x ~/Downloads/qt-unified-linux-x64-online.run
+#~/Downloads/qt-unified-linux-x64-online.run
 
 
 
